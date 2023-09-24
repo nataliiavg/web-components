@@ -1,10 +1,14 @@
-class CardNews extends HTMLElement {
-    constructor() {
-        super()
+class Cardnews extends HTMLElement {
+    constructor(){
+        super();
 
-        const shadow = this.attachShadow({ mode: "open" })
-        shadow.innerHTML = "<h1>Hello, Natalia!</h1>"
+        const shadow = this.attachShadow({mode: "open"});
+        shadow.innerHTML = "<h1></h1>"
     }
+
+    build(){}
+
+    styles(){}
 }
 
-customElements.define('card-news', CardNews)
+customElements.define("card-news", Cardnews);
