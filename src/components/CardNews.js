@@ -18,6 +18,7 @@ class Cardnews extends HTMLElement {
     autor.textContent = "By " + (this.getAttribute("autor") || "Anonymous");
     const linkTitle = document.createElement("a");
     linkTitle.textContent = this.getAttribute("title");
+    linkTitle.href = this.getAttribute("link-url");
 
     const newsContent = document.createElement("p");
     newsContent.textContent = this.getAttribute("content");
@@ -28,6 +29,8 @@ class Cardnews extends HTMLElement {
     const cardRight = document.createElement("div");
     cardRight.setAttribute("class", "card__right");
     const newsImage = document.createElement("img");
+    newsImage.src = this.getAttribute("photo") || "assets/image-not-found.png";
+    newsImage.alt = "Foto da Notícia";
     cardRight.appendChild(newsImage);
 
     componentRoot.appendChild(cardLeft);
@@ -36,7 +39,7 @@ class Cardnews extends HTMLElement {
     return componentRoot;
   }
 
-  styles() {}
+  styles() { }
 }
 
 customElements.define("card-news", Cardnews);
